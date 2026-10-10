@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MTG Collection">
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16171a" media="(prefers-color-scheme: dark)">
+  <meta name="build" content="20261010064331">
+  <title>MTG Collection</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=20261010064331">
+</head>
+<body>
+  <header class="topbar" hidden>
+    <span class="brand">MTG Collection</span>
+    <nav>
+      <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+      <a href="#/collection" data-nav="collection">Collection</a>
+      <a href="#/locations" data-nav="locations">Locations</a>
+      <a href="#/imports" data-nav="imports">Imports</a>
+    </nav>
+    <button type="button" class="lock-btn" id="lock-btn" title="Lock and forget passphrase on this device">Lock</button>
+  </header>
+
+  <main id="app">
+    <section class="unlock" id="unlock">
+      <h1>MTG Collection</h1>
+      <p class="muted">Enter your passphrase to open your collection.</p>
+      <form id="unlock-form" autocomplete="on">
+        <input type="text" name="username" value="mtg-collection" autocomplete="username" hidden>
+        <input type="password" id="passphrase" name="password" autocomplete="current-password" placeholder="Passphrase" required>
+        <label class="check"><input type="checkbox" id="remember" checked> Remember on this device</label>
+        <button type="submit" id="unlock-btn">Unlock</button>
+        <p class="error" id="unlock-error" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="vendor/sql-wasm.js"></script>
+  <script type="module" src="app.js?v=20261010064331"></script>
+</body>
+</html>
